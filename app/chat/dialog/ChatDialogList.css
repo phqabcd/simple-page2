@@ -1,0 +1,100 @@
+/* ChatDialogList.css */
+
+.chat-dialog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.chat-dialog-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.chat-dialog-item:hover {
+    background-color: #f5f5f5;
+}
+
+.avatar-container {
+    position: relative; /* 允许内部元素绝对定位 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px; /* 根据需要调整 */
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover; /* 确保头像不会变形 */
+}
+
+.count-badge {
+    position: absolute;
+    top: -8px; /* 根据需要调整 */
+    right: -8px; /* 根据需要调整 */
+    background-color: #ff7f7f;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 4px 8px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.chat-dialog-item .content {
+    flex-grow: 1;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    /* 字体样式 */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; /* 类似于微信的字体栈 */
+    font-weight: bold; /* 标题通常加粗 */
+
+    /* 字体大小 */
+    font-size: 16px; /* 根据需要调整 */
+
+    /* 颜色 */
+    color: #333; /* 类似于微信的深灰色 */
+
+    /* 边距和填充 */
+    margin-top: 4px; /* 根据需要调整 */
+    margin-bottom: 8px; /* 根据需要调整 */
+    margin-right: 10px; /* 给时间戳留出空间 */
+
+    /* 其他可能的样式 */
+    overflow: hidden; /* 防止文本溢出 */
+    text-overflow: ellipsis; /* 当文本溢出时显示省略号 */
+    white-space: nowrap; /* 防止文本换行 */
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #999; /* 假设时间戳颜色为浅灰色 */
+}
+
+.chat-dialog-item .sub-title {
+    font-size: 12px;
+    color: #888;
+}
+
+/* 可选：添加未读消息样式 */
+.chat-dialog-item.unread .title::after {
+    content: ' ···';
+    color: #f00;
+    font-weight: bold;
+    margin-left: 8px;
+}
